@@ -8,7 +8,7 @@ if you want to know why we need to use clean architecture in our app, what's the
 
 ## Description
 
-This is how i intilize clean architecture pattern in my nestjs project. Clean architecture has three main layers but these layers is not how you structure the folder. These layer is how you should seperate your code to achive clean architecture. The three main layers are:
+This is how i intilize clean architecture pattern with abstract repository pattern in my nestjs project. Clean architecture has three main layers but these layers is not how you structure the folder. These layer is how you should seperate your code to achive clean architecture. The three main layers are:
 1. Entities </br>
 Entities contains all the business entities that construct application
 2. Use cases </br>
@@ -34,30 +34,3 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
