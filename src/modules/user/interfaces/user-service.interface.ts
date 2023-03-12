@@ -1,7 +1,7 @@
 /**
  * @description User service interface
- * Contains object for user service
+ * Contains function for user service
  */
 export interface UserServiceInterface {
-  getUser(): string;
+  createUser(): Promise<string>;
 }

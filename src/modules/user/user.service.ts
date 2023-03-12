@@ -1,19 +1,27 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { UserEntity } from 'src/core/entities/user.entity';
 import { UserServiceInterface } from './interfaces/user-service.interface';
 import { UserRepository } from './repositories/user.repository';
 
 @Injectable()
 export class UserService implements UserServiceInterface {
-  /**
-   * @description Database not initilize
-   * Use this after registering database and entity
-   */
-  // constructor(
-  //   private  readonly userRespository: UserRepository
-  // ) {}
+  constructor(
+    private readonly userRespository: UserRepository
+  ) {}
   
-  getUser(): string {
-    return "Success";
+  async createUser(): Promise<string> {
+    const newUser = new UserEntity();
+    newUser.firstName = 'prince';
+    newUser.lastName = 'jo';
+
+    try {
+      // save new user
+      await this.userRespository.save(newUser);
+
+      return `success to create new user: ${newUser.firstName} ${newUser.lastName}`
+    } catch (error) {      
+      throw new InternalServerErrorException(error);
+    }
   }
 
 }

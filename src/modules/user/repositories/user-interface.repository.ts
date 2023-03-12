@@ -3,6 +3,6 @@ import { BaseRepositoryInterface } from "src/core/repositores/base-interface.rep
 
 /**
  * @description Registry
- * Make new user repository by extend base repository interface and specify user entity
+ * Registry user entity to base repository interface
  */
 export interface UserRepositoryInterface extends BaseRepositoryInterface<UserEntity> {}

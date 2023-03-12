@@ -14,16 +14,16 @@ export class UserRepository extends BaseAbstractRepository<UserEntity> implement
 {
   constructor(    
     @InjectRepository(UserEntity)
-    private readonly UserRepository: Repository<UserEntity>,
+    private readonly userRepository: Repository<UserEntity>,
   ) {
-    super(UserRepository);
+    super(userRepository);
   }
-
+  
   /**
    * @description Push Notification
    * Function that is not in Base abstract
    */
-  public pushNotification(): string {
-    return "success";
-  }
+  getUserWithQuery() {
+    return this.userRepository.query("");
+  }  
 }
