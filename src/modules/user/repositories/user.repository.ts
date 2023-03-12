@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserEntity } from 'src/core/entities/user.entity';
+import { UserEntity } from 'src/modules/user/entities/user.entity';
 import { BaseAbstractRepository } from 'src/core/repositores/base-abstract.repository';
 import { Repository } from 'typeorm';
-import { UserRepositoryInterface } from './user-interface.repository';
+import { UserRepositoryInterface } from '../interfaces/user-repository.interface';
 
 /**
- * @description User Repository Provider
- * Making user repository that extends function from base abstract repository
+ * @description Registry 
+ * Registry user entity to base abstract generic repository and implement user 
+ * repository interface that contains addtional database communication that the base abstract not implement yet
  */
 @Injectable()
 export class UserRepository extends BaseAbstractRepository<UserEntity> implements UserRepositoryInterface
@@ -22,8 +23,9 @@ export class UserRepository extends BaseAbstractRepository<UserEntity> implement
   /**
    * @description Push Notification
    * Function that is not in Base abstract
-   */
-  getUserWithQuery() {
-    return this.userRepository.query("");
-  }  
+  */
+  getUserWithQuery(query: string): Promise<string> {
+    return this.userRepository.query(query);
+  }
+  
 }

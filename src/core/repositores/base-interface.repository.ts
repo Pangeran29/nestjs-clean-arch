@@ -2,7 +2,7 @@ import { DeepPartial, FindManyOptions, FindOneOptions } from 'typeorm';
 
 /**
  * @description Base Repository Interface
- * This interface is common function that used in table
+ * This interface is common function that used with type orm
  */
 export interface BaseRepositoryInterface<T> {
   create(data: DeepPartial<T>): T;

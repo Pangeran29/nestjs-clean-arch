@@ -1,7 +1,9 @@
+import { CreateUserDto } from "../dtos/create-user.dto";
+
 /**
  * @description User service interface
- * Contains function for user service
+ * Interface that specify all funtion that user service need to implement
  */
 export interface UserServiceInterface {
-  createUser(): Promise<string>;
+  createUser(createUserDto: CreateUserDto): Promise<string>;
 }

@@ -1,6 +1,6 @@
 /**
  * @description User Entity
- * Core of the application
+ * Class that contains user's entity
  */
 import {
   Column,

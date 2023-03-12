@@ -13,7 +13,7 @@ interface HasId {
 
 /**
  * @description Base abstarct class
- * This class managing communication between code and database
+ * This abstract class is implementing common function that used in type orm
  */
 export abstract class BaseAbstractRepository<T extends HasId> implements BaseRepositoryInterface<T>
 {
