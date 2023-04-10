@@ -1,9 +1,13 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { InfraModule } from './infra/infra.module';
+import { CoreModule } from './core/core.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true })
-  ] 
+    CoreModule,
+    CommonModule,
+    InfraModule
+  ]
 })
 export class AppModule {}
