@@ -8,6 +8,6 @@ import { CommonModule } from './common/common.module';
     CoreModule,
     CommonModule,
     InfraModule
-  ]
+  ],
 })
 export class AppModule {}
